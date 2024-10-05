@@ -1,0 +1,1502 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class=" z-[5] overflow-hidden">
+    <script  src="https://cdn.tailwindcss.com"></script>
+    <link 
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script  src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script  src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+        <style>
+          :root {
+            --p: #FA663B; /* Custom primary color */
+            --pf: #FA663B; /* Primary color for focus or active states */
+            --pc: #ffffff; /* Primary content color (text color) */
+          }
+          
+          /* Ensure active state keeps the same color */
+          input[type="checkbox"].toggle-primary:checked {
+            background-color: var(--p); /* Set active color */
+            border-color: var(--pf); /* Set focus/active border color */
+          }
+        </style>
+
+<style>
+p{
+font-family:Myriadpro;
+}
+span{
+font-family:Myriadpro;
+}
+button{
+font-family:Myriadpro;
+}
+
+@media (max-width: 700px) {
+    .comp-w-430 {
+        width: 400px;
+    }
+}
+
+@media (min-width: 700px) {
+
+    .comp-container {
+        width: 700px;
+     
+    }
+    
+}
+
+  @media (min-width: 301px) {
+    .custom-sm-hidden {
+       display: none !important;
+      }
+      .custom-sm-block {
+       display: block !important;
+      }
+      .custom-sm-grid {
+       display: grid !important;
+      }
+      .custom-sm-grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .custom-sm-h-250px {
+        height: 250px;
+      }
+      .sm-flex-row {
+        flex-direction: row !important;
+      }
+      .sm-gap-5{
+ gap: 1.25rem;
+      }
+       .custom-sm-col-span-2 {
+        grid-column: span 2 / span 2;
+      }
+      .custom-sm-w-350 {
+        width: 350px;
+      }
+    }
+
+    @media (max-width: 301px) {
+        .custom-xs-hidden {
+       display: none !important;
+      }
+      .custom-xs-flex {
+       display: flex !important;
+      }
+    }
+</style>
+<div class=" flex justify-center ">
+   <div class="h-[480px] comp-container flex flex-col justify-center z-[4]">
+
+        <section
+          class=" stage1 comp-w-430  h-[463px] flex flex-col justify-between pr-[25px] pl-[25px] pt-[40px] pb-[40px] gap-[40px]"
+        >
+         <p  class="text-[22px]  text-center fixed-height-paragraph">État civil</p>
+          <div class="flex flex-col justify-between gap-[10px]">
+           
+            <div class="w-auto h-[100px] custom-sm-h-250px flex flex-col justify-start">
+        
+            
+        <div class="custom-xs-flex custom-sm-hidden flex flex-col gap-[50px] ">
+            <select id="select1" class="w-[100%] h-[50px] border border-[#D3D3D3] rounded-[4px]">
+                <option value="0" data-value="0">divorcé</option>
+                <option class="" value="1" data-value="30">marié</option>
+                <option value="2" data-value="0">célibataire</option>
+                <option value="3" data-value="0">séparé</option>
+                <option value="4" data-value="0">veuf /veuve</option>
+                <option value="5" data-value="20">partenariat fédéral</option>
+         
+     
+              </select>
+
+              <!-- <p class="text-[22px] text-center fixed-height-paragraph">Situation professionnelle</p>
+
+              <select id="select2" class="w-[100%] h-[50px] border border-[#D3D3D3] rounded-[4px]">
+                <option value="0" data-value="0">apprenti</option>
+                <option class="" value="1" data-value="0">étudiant</option>
+                <option value="2" data-value="10">chômage</option>
+                <option value="3" data-value="10">invalide</option>
+                <option value="4" data-value="20">salarié</option>
+                <option value="5" data-value="20">retraite</option>
+                <option value="6" data-value="399">indépendant</option>
+              </select> -->
+        </div>
+    
+        
+                <div class=" grid-cols-1 flex custom-sm-grid custom-xs-hidden  custom-sm-grid-cols-2  gap-[14px]">
+              <label
+                class="bg-white gap-[8px] cursor-pointer hover:bg-[#D3D3D3] transition flex items-center pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                <label class="radioStage1 label  cursor-pointer gap-1 flex flex-row items-center gap-[10px]" select-data="divorcé" style="margin-bottom: 0px;
+" data-value="0">
+                  <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">divorcé</span>
+                </label>
+              </label>
+
+              <label
+                class="bg-white gap-[8px] cursor-pointer hover:bg-[#D3D3D3] transition flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                <label class="radioStage1 label cursor-pointer gap-1 gap-[10px]"  style="margin-bottom: 0px;" select-data="marié" data-value="30">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">marié</span>
+                </label>
+              </label>
+
+              <label
+                class="bg-white gap-[8px] cursor-pointer hover:bg-[#D3D3D3] transition flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                <label class="radioStage1 label cursor-pointer gap-1 gap-[10px]" style="margin-bottom: 0px;" select-data="célibataire" data-value="0">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">célibataire</span>
+                </label>
+              </label>
+
+              <label
+                class="bg-white gap-[8px] cursor-pointer hover:bg-[#D3D3D3] transition flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                 <label class="radioStage1 label cursor-pointer gap-1 gap-[10px]" style="margin-bottom: 0px;" select-data="séparé" data-value="0">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">séparé</span>
+                </label>
+              </label>
+
+              <label
+                class="bg-white gap-[8px] cursor-pointer hover:bg-[#D3D3D3] transition flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                 <label class="radioStage1 label cursor-pointer gap-1 gap-[10px]" style="margin-bottom: 0px;" select-data="veuf /veuve" data-value="0">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">veuf /veuve</span>
+                </label>
+              </label>
+
+              <label
+                class="bg-white gap-[8px] cursor-pointer hover:bg-[#D3D3D3] transition flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                <label class=" radioStage1 label cursor-pointer gap-1 gap-[10px]" style="margin-bottom: 0px;" select-data="partenariat fédéral" data-value="20">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">partenariat fédéral</span>
+                </label>
+              </label>
+              <label style="font-family:Myriadpro" class="custom-sm-col-span-2 font-medium  text-center text-[17px]">
+             Je veux et j'exige un devis sur mesure.</label>
+            </div>
+          </div>
+          </div>
+
+          <div class="flex justify-center flex-col-reverse sm-flex-row gap-3 sm-gap-5">
+            <button 
+            class="custom-sm-hidden flex gap-[8px] items-center bg-[#F9F9F9] hover:bg-[#F9F9F9] active:bg-[#F9F9F9] active:border-[#F9F9F9] transition text-[#F9F9F9] border hover:border-[#F9F9F9] border-[#F9F9F9] pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+          >
+          
+            -
+       
+            <button id="next1"
+              class="z-[4] text-[17px] flex gap-[8px] items-center bg-[#FB673B] hover:bg-[#CF2501] transition text-white pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              En avant
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e22fcc58ba40ac8972d67_Vector%20(4).svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </section>
+
+        <section
+          class="hidden stage2 comp-w-430  flex flex-col h-[463px] justify-between pr-[25px] pl-[25px] pt-[40px] pb-[40px] gap-[40px]"
+        >
+           <p class="text-[22px] text-center fixed-height-paragraph">Situation professionnelle</p>
+          <div class="flex flex-col gap-[10px]">
+         
+            <div class="w-auto h-[100px] custom-sm-h-250px flex flex-col justify-start">
+
+                <div class="custom-xs-flex custom-sm-hidden ">
+                    <select id="select2" class="w-[100%]  h-[50px] border border-[#D3D3D3] rounded-[4px]">
+                        <option value="0" data-value="0">apprenti</option>
+                        <option class="" value="1" data-value="0">étudiant</option>
+                        <option value="2" data-value="10">chômage</option>
+                        <option value="3" data-value="10">invalide</option>
+                        <option value="4" data-value="20">salarié</option>
+                        <option value="5" data-value="20">retraite</option>
+                        <option value="6" data-value="399">indépendant</option>
+                      </select>
+                </div>
+
+
+            <div class=" grid-cols-1 custom-sm-grid custom-xs-hidden custom-sm-grid-cols-2 gap-[14px]">
+              <label
+                class="bg-white cursor-pointer hover:bg-[#D3D3D3] transition gap-[8px] flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                 <label class="radioStage2 label cursor-pointer gap-1 gap-[10px]" style="margin-bottom: 0px;" select-data="apprenti" data-value="0">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">apprenti</span>
+                </label>
+              </label>
+
+              <label
+                class="bg-white cursor-pointer hover:bg-[#D3D3D3] transition gap-[8px] flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                <label class="radioStage2 label cursor-pointer gap-1 gap-[10px]" style="margin-bottom: 0px;" select-data="étudiant" data-value="0">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">étudiant</span>
+                </label>
+              </label>
+
+              <label
+                class="bg-white cursor-pointer hover:bg-[#D3D3D3] transition gap-[8px] flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                 <label class=" radioStage2 label cursor-pointer gap-1 gap-[10px]" style="margin-bottom: 0px;" select-data="chômage" data-value="10">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">chômage</span>
+                </label>
+              </label>
+
+              <label
+                class="bg-white cursor-pointer hover:bg-[#D3D3D3] transition gap-[8px] flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                <label class="radioStage2 label cursor-pointer gap-1 gap-[10px]" style="margin-bottom: 0px;" select-data="invalide" data-value="10">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">invalide</span>
+                </label>
+              </label>
+
+              <label
+                class="bg-white cursor-pointer hover:bg-[#D3D3D3] transition gap-[8px] flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                <label class="radioStage2 label cursor-pointer gap-1 gap-[10px]" style="margin-bottom: 0px;" select-data="salarié" data-value="20">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">salarié</span>
+                </label>
+              </label>
+
+              <label
+                class="bg-white cursor-pointer hover:bg-[#D3D3D3] transition gap-[8px] flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                <label class=" radioStage2 label cursor-pointer gap-1 gap-[10px]" style="margin-bottom: 0px;" select-data="retraite" data-value="20">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">retraite</span>
+                </label>
+              </label>
+
+              <label
+                class="bg-white cursor-pointer hover:bg-[#D3D3D3] transition custom-sm-col-span-2 gap-[8px] flex pl-[9px] pr-[9px] pt-[5px] pb-[5px] border border-[#D3D3D3] rounded-[4px] w-[100%]"
+              >
+                <label class="radioStage2 label cursor-pointer gap-1 gap-[10px]" style="margin-bottom: 0px;" select-data="indépendant" data-value="399">
+                 <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio radio-sm checked:bg-red-500"
+                    checked="checked"
+                  />
+                  <span class="font-medium text-[17px]">indépendant</span>
+                </label>
+              </label>
+            </div>
+          </div>
+</div>
+          <div class="flex justify-center flex-col-reverse sm-flex-row gap-3 sm-gap-5">
+            <button id="back2"
+              class="flex text-[17px] gap-[8px] items-center bg-[#F9F9F9] hover:bg-[#D3D3D3] transition text-black border hover:border-black border-[#FB673B] pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e254d15bd7c845bf618ee_Vector%20(5).svg"
+                alt=""
+              />
+              Arrière
+            </button>
+            <button id="next2"
+              class="flex text-[17px] gap-[8px] items-center bg-[#FB673B] hover:bg-[#CF2501] transition text-white pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              En avant
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e22fcc58ba40ac8972d67_Vector%20(4).svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </section>
+
+        <section
+          class="hidden stage3 comp-w-430  h-[464px] justify-between flex flex-col pr-[25px] pl-[25px] pt-[40px] pb-[40px] gap-[40px]"
+        >
+         <p class="text-[22px] text-center fixed-height-paragraph">Êtes-vous propriétaire ?</p>
+          <div class="flex flex-col gap-[10px]">
+           
+            <div class="flex gap-[20px] justify-center">
+                <div class="w-auto h-[100px] custom-sm-h-250px  flex flex-row justify-center items-center gap-5">
+              <div class="form-control">
+                <label result="true"
+                  class="radioStage3 cursor-pointer hover:bg-[#D3D3D3] transition label cursor-pointer flex flex-col gap-[10px] bg-white border border-[#D3D3D3] rounded rounded-[4px] w-[90px]" select-data="oui" data-value="70"
+                >
+                  <span class="font-medium text-[17px]">oui</span>
+                  <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio checked:bg-red-500"
+                    checked="checked"
+                  />
+                </label>
+              </div>
+              <div class="form-control">
+                <label result="false"
+                  class="radioStage3 cursor-pointer hover:bg-[#D3D3D3] transition label cursor-pointer flex flex-col gap-[10px] bg-white border border-[#D3D3D3] rounded rounded-[4px] w-[90px]" select-data="non" data-value="0"
+                >
+                  <span class="font-medium text-[17px]">non</span>
+                  <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio checked:bg-blue-500"
+                    checked="checked"
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="flex justify-center flex-col-reverse sm-flex-row gap-3 sm-gap-5">
+            <button id="back3"
+              class="flex gap-[8px] text-[17px] items-center bg-[#F9F9F9] hover:bg-[#D3D3D3] transition text-black border hover:border-black border-[#FB673B] pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e254d15bd7c845bf618ee_Vector%20(5).svg"
+                alt=""
+              />
+              Arrière
+            </button>
+            <button id="next3"
+              class="flex gap-[8px] text-[17px] items-center bg-[#FB673B] hover:bg-[#CF2501] transition text-white pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              En avant
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e22fcc58ba40ac8972d67_Vector%20(4).svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </section>
+
+        <section
+          class="stage4 hidden comp-w-430  h-[463px] justify-between flex flex-col pr-[25px] pl-[25px] pt-[40px] pb-[40px] gap-[40px]"
+        >
+         <p class="text-[22px] text-center fixed-height-paragraph">Nombre de bien immobilier</p>
+          <div class="flex flex-col gap-[10px]">
+           
+                <div class="w-[100%] h-[100px] custom-sm-h-250px  flex flex-col justify-center items-center gap-5">
+            <div
+              class="flex w-[100%] flex-col gap-[20px] pt-[20px] pb-[20px] justify-center"
+            >
+              <div class="flex justify-center">
+                <input
+                  id="sliderValueInput"
+                  type="number"
+                  min="1"
+                  max="8"
+                  value="1"
+                  class="text-center text-[22px] w-12 border border-gray-300 rounded"
+                />
+              </div>
+              <div class="relative">
+                <input
+                  id="slider"
+                  type="range"
+                  min="1"
+                  max="8"
+                  value="1"
+                  class="w-full"
+                />
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center flex-col-reverse sm-flex-row gap-3 sm-gap-5">
+            <button id="back4"
+              class="flex gap-[8px] text-[17px] items-center bg-[#F9F9F9] hover:bg-[#D3D3D3] transition text-black border hover:border-black border-[#FB673B] pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e254d15bd7c845bf618ee_Vector%20(5).svg"
+                alt=""
+              />
+              Arrière
+            </button>
+            <button id="next4"
+              class="flex gap-[8px] text-[17px] items-center bg-[#FB673B] hover:bg-[#CF2501] transition text-white pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              En avant
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e22fcc58ba40ac8972d67_Vector%20(4).svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </section>
+
+        <section
+          class="hidden stage5 comp-w-430  h-[463px] flex flex-col justify-between pr-[25px] pl-[25px] pt-[40px] pb-[40px] gap-[40px]"
+        >
+          <p class="text-[22px] text-center fixed-height-paragraph">
+              Avez-vous des actions ou des cryptomonnaies ?
+            </p>
+          <div class="flex flex-col gap-[10px]">
+           
+            <div class="flex gap-[20px] justify-center">
+                <div class="w-auto h-[100px] custom-sm-h-250px  flex flex-row justify-center items-center gap-5">
+              <div class="form-control">
+                <label result="true"
+                  class="radioStage5 cursor-pointer hover:bg-[#D3D3D3] transition label cursor-pointer flex flex-col gap-[10px] bg-white border border-[#D3D3D3] rounded rounded-[4px] w-[90px]" select-data="oui" data-value="70"
+                >
+                  <span class="font-medium text-[17px]">oui</span>
+                  <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio checked:bg-red-500"
+                    checked="checked"
+                  />
+                </label>
+              </div>
+              <div class="form-control">
+                <label result="false"
+                  class="radioStage5 cursor-pointer hover:bg-[#D3D3D3] transition label cursor-pointer flex flex-col gap-[10px] bg-white border border-[#D3D3D3] rounded rounded-[4px] w-[90px]" select-data="non" data-value="0"
+                >
+                  <span class="font-medium text-[17px]">non</span>
+                  <input
+                    type="radio"
+                    name="radio-10"
+                    class="radio checked:bg-blue-500"
+                    checked="checked"
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="flex justify-center flex-col-reverse sm-flex-row gap-3 sm-gap-5">
+            <button id="back5"
+              class="flex gap-[8px] text-[17px] items-center bg-[#F9F9F9] hover:bg-[#D3D3D3] transition text-black border hover:border-black border-[#FB673B] pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e254d15bd7c845bf618ee_Vector%20(5).svg"
+                alt=""
+              />
+              Arrière
+            </button>
+            <button id="next5"
+              class="flex gap-[8px] text-[17px] items-center bg-[#FB673B] hover:bg-[#CF2501] transition text-white pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              En avant
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e22fcc58ba40ac8972d67_Vector%20(4).svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </section>
+
+        <section
+          class="stage6 comp-w-430  hidden h-[463px] justify-between flex flex-col pr-[25px] pl-[25px] pt-[40px] pb-[40px] gap-[40px]"
+        >
+          <p class="text-[22px] text-center fixed-height-paragraph">Nombre de portefeuille</p>
+          <div class="flex flex-col gap-[10px]">
+          
+               <div class="w-[100%] h-[100px] custom-sm-h-250px flex flex-col justify-center items-center gap-5">
+            <div
+              class="flex flex-col w-[100%] gap-[20px] pt-[20px] pb-[20px] justify-center"
+            >
+              <div class="flex justify-center">
+                <input
+                  id="sliderValueInput2"
+                  type="number"
+                  min="1"
+                  max="8"
+                  value="1"
+                  class="text-center text-[22px] w-12 border border-gray-300 rounded"
+                />
+              </div>
+              <div class="relative">
+                <input
+                  id="slider2"
+                  type="range"
+                  min="1"
+                  max="8"
+                  value="1"
+                  class="w-full"
+                />
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="flex justify-center flex-col-reverse sm-flex-row gap-3 sm-gap-5">
+            <button id="back6"
+              class="flex gap-[8px] text-[17px] items-center bg-[#F9F9F9] hover:bg-[#D3D3D3] transition text-black border hover:border-black border-[#FB673B] pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e254d15bd7c845bf618ee_Vector%20(5).svg"
+                alt=""
+              />
+              Arrière
+            </button>
+            <button id="next6"
+              class="flex gap-[8px] text-[17px] items-center bg-[#FB673B] hover:bg-[#CF2501] transition text-white pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              En avant
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e22fcc58ba40ac8972d67_Vector%20(4).svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </section>
+
+        <section
+          class="hidden stage9 comp-w-430  h-[463px] flex flex-col justify-between pr-[25px] pl-[25px] pt-[40px] pb-[40px] gap-[40px]"
+        >
+          <p class="text-[22px] text-center fixed-height-paragraph">
+            Vivatax Assistance
+            </p>
+          <div class="flex flex-col gap-[10px]">
+           
+            <div class="flex gap-[20px] justify-center">
+                <div class="w-auto h-[100px] custom-sm-h-250px  flex flex-row justify-center items-center gap-5">
+                
+                <div class="sm:flex  custom-sm-w-350 sm:flex-col sm:gap-[10px]">
+                <!-- <div class=""> -->
+                
+                  <div class="form-control">
+                    <label class="label cursor-pointer">
+                      <span class="font-medium text-[17px]">Demande de délai</span>
+                      <input type="checkbox" class="toggle toggle-primary check1 checkbox-item"  />
+                    </label>
+                  </div>
+
+
+
+                  <div class="form-control">
+                    <label class="label cursor-pointer">
+                      <span class="font-medium text-[17px]">Analyse de la taxation définitive</span>
+                      <input type="checkbox" class="toggle toggle-primary check2 checkbox-item"  />
+                    </label>
+                  </div>
+
+
+                  <div class="form-control">
+                    <label class="label cursor-pointer">
+                      <span class="font-medium text-[17px]">Opposition</span>
+                      <input type="checkbox" class="toggle toggle-primary check3 checkbox-item"  />
+                    </label>
+                  </div>
+
+
+                  <div class="form-control">
+                    <label class="label cursor-pointer">
+                      <span class="font-medium text-[17px]">Hotline annuelle</span>
+                      <input type="checkbox" class="toggle toggle-primary check4 checkbox-item"  />
+                    </label>
+                  </div>
+
+
+                  <div class="form-control">
+                    <label class="label cursor-pointer">
+                      <div class="flex gap-1">
+                      <span class="font-medium text-[17px]">Vivatax Assistance 365</span>
+                      <div class="hidden custom-sm-hidden">
+                      <div class="  tooltip" data-tip="Avec le pack Vivatax Assistance 365, vous profiterez de toutes les prestations relatives au suivi administratif.">
+                      </div>
+                        <img class="w-[15px] h-[15px]" src="https://cdn-icons-png.flaticon.com/512/665/665049.png" alt="">
+                    </div>
+                    </div>
+                      <input type="checkbox" class="toggle toggle-primary  toggle-all"  />
+                    </label>
+                  </div>
+
+
+                </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="flex justify-center flex-col-reverse sm-flex-row gap-3 sm-gap-5">
+            <button id="back9"
+              class="flex gap-[8px] text-[17px] items-center bg-[#F9F9F9] hover:bg-[#D3D3D3] transition text-black border hover:border-black border-[#FB673B] pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e254d15bd7c845bf618ee_Vector%20(5).svg"
+                alt=""
+              />
+              Arrière
+            </button>
+            <button id="next9"
+              class="flex gap-[8px] text-[17px] items-center bg-[#FB673B] hover:bg-[#CF2501] transition text-white pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+              En avant
+              <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e22fcc58ba40ac8972d67_Vector%20(4).svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </section>
+
+
+        <form id="myForm"
+          class="hidden stage7 comp-w-430  h-[463px] items-center justify-between hidden flex flex-col pr-[25px] pl-[25px] pt-[40px] "
+        >
+        <p class="text-[22px] text-center fixed-height-paragraph">Recevoir mon devis</p>
+          <div class="flex flex-col gap-[10px]  w-[100%]">
+            
+         
+           
+                 <div class="w-[100%] h-[250px] custom-sm-h-250px  h-[100px] mt-[-20px]  flex flex-col justify-center items-center gap-2">
+              <label class="input w-[100%] input-bordered flex items-center gap-2">
+                <input id="name" type="text" class=" text-[17px] grow font-medium" placeholder="Nom et Prénom" />
+                
+                </svg>
+              </label>
+              <label class="input w-[100%] input-bordered flex items-center gap-2">
+                
+        
+                <input id="email" type="email" class=" text-[17px] grow font-medium" placeholder="Adresse E-mail" />
+              </label>
+              <label class="input w-[100%] input-bordered flex items-center gap-2">
+                
+                <input id="phone" type="text" class="text-[17px] grow font-medium" placeholder="Numéro de téléphone" />
+              </label>
+              <label style="font-family:Myriadpro" class="text-[17px] w-[100%] font-medium text-center">Vous recevrez alors une offre personnalisée et sans engagement par e-mail en format PDF.</label>
+</div>
+</div>   
+
+           
+           
+            
+      
+<div class="h-[51.5px] pb-[20px] flex justify-center items-center w-[100%]">
+          <button type="submit"
+          class="flex justify-center w-[130px] text-[17px] gap-[8px] items-center bg-[#FB673B] hover:bg-[#CF2501] transition text-white pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+        >
+  
+         
+          Recevoir
+          <img
+          src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e22fcc58ba40ac8972d67_Vector%20(4).svg"
+          alt=""
+        />
+        </button>
+    </div>
+        </form>
+
+            <section
+          class="stage8 hidden  flex flex-col pr-[25px] pl-[25px] pt-[40px] pb-[40px] gap-[40px]"
+        >
+ <p class="text-[22px]  text-center">La Fiduciaire Vivatax vous remercie pour votre confiance et prendra contact avec vous dans les plus brefs délais !</p>
+            <p id="counter" class="text-[28px] text-[#FB673B] text-center">Prix total : CHF 135,80</p>
+         <button id="EndButton"
+              class="flex text-[17px] items-center justify-center gap-[8px] items-center bg-[#FB673B] hover:bg-[#CF2501] transition text-white pl-[22px] pr-[22px] pt-[12px] pb-[12px] rounded rounded-[4px]"
+            >
+    Nos agences
+     <img
+                src="https://uploads-ssl.webflow.com/668c16e02d905d343797cc16/669e22fcc58ba40ac8972d67_Vector%20(4).svg"
+                alt=""
+              />
+            </button>
+
+           
+       
+
+        </section>
+     
+</div>
+</div>
+    <style>
+      /* Custom slider styling */
+      input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 8px;
+        background: #d1d5db; /* Tailwind gray-300 */
+        outline: none;
+        border-radius: 5px;
+      }
+
+      .tooltip{
+        position: static!important;
+    transform: translateX(0%)!important;
+    background-color: transparent!important;
+    padding: 0px!important;
+    border-radius: 0px!important;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1)!important;
+      }
+
+      .fixed-height-paragraph {
+
+  height: 1em; /* This is optional if you want to ensure a fixed height */
+   /* This is optional to hide overflow text */
+}
+      
+      .w-webflow-badge {
+display:none!important;      
+}
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        background: #f97316; /* Tailwind orange-500 */
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        width: 24px;
+        height: 24px;
+        background: #f97316; /* Tailwind orange-500 */
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      /* Tooltip styling */
+      .tooltip {
+        position: absolute;
+        transform: translateX(-50%);
+        background-color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .toggle-all{
+        color: var(black,#FA663B) !important;
+      }
+    </style>
+
+    <script defer>
+
+
+
+const toggleAllCheckbox = document.querySelector('.toggle-all');
+  const checkboxes = document.querySelectorAll('.checkbox-item');
+
+  toggleAllCheckbox.addEventListener('change', function () {
+    if (this.checked) {
+    checkboxes.forEach(checkbox => {
+      checkbox.checked = this.checked;
+    });
+  }
+  });
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+      if (!this.checked && toggleAllCheckbox.checked) {
+        toggleAllCheckbox.checked = false;
+      }
+    });
+  });
+
+
+
+let amount = 69;
+let EndNum;
+let adderStage1 = 0;
+let adderStage2 = 0;
+let adderStage3 = 0;
+let adderStage4 = 0;
+let adderStage5 = 0;
+let adderStage6 = 0;
+let adderStage7 = 0;
+let adderStage8 = 0;
+let adderStage9 = 0;
+let adderStage10 = 0;
+let adderStage11 = 0;
+
+
+let Assistance1 = "No";
+let Assistance2= "No";
+let Assistance3= "No";
+let Assistance4= "No";
+let Assistance5= "No";
+
+document.querySelector(".check1").addEventListener('change', function () {
+    if (this.checked) {
+        Assistance1 = "Yes";
+      console.log("check1")
+      adderStage7 = 50;
+  }
+  else
+  {
+    Assistance1 = "No";
+    adderStage7 = 0;
+  }
+  });
+
+  document.querySelector(".check2").addEventListener('change', function () {
+    if (this.checked) {
+        Assistance2 = "Yes";
+      adderStage8 = 70;
+  }
+  else
+  {
+    Assistance2 =  "No"
+    adderStage8 = 0;
+  }
+  });
+
+  document.querySelector(".check3").addEventListener('change', function () {
+    if (this.checked) {
+        Assistance3 = "Yes";
+      adderStage9 = 60;
+  }
+  else
+  {
+    Assistance3 = "No";
+    adderStage9 = 0;
+  }
+  });
+
+  document.querySelector(".check4").addEventListener('change', function () {
+    if (this.checked) {
+        Assistance4 = "Yes";
+      adderStage10 = 70;
+  }
+  else
+  {
+    Assistance4 = "No";
+    adderStage10 = 0;
+  }
+});
+  document.querySelector(".toggle-all").addEventListener('change', function () {
+    if (this.checked) {
+        Assistance5 = "Yes";
+      adderStage10 = 110;
+  }
+  else
+  {
+    Assistance5 = "No";
+    adderStage10 = 0;
+  }
+  });
+     const valueMap = {
+        1: 0,
+        2: 70,
+        3: 140,
+        4: 210,
+        5: 280,
+        6: 350,
+        7: 420,
+        8: 490
+      };
+
+           const valueMap2 = {
+        1: 0,
+        2: 20,
+        3: 40,
+        4: 60,
+        5: 80,
+        6: 100,
+        7: 120,
+        8: 140
+      };
+
+
+const counterDiv = document.getElementById('counter');
+      const radioStage1 = document.querySelectorAll('.radioStage1');
+      const radioStage2 = document.querySelectorAll('.radioStage2');
+      const radioStage3 = document.querySelectorAll('.radioStage3');
+      const radioStage5 = document.querySelectorAll('.radioStage5');
+      const numberInput2 = document.getElementById('sliderValueInput2');
+      const numberInput1 = document.getElementById('sliderValueInput');
+       const slider2 = document.getElementById('slider2');
+       const slider1 = document.getElementById('slider');
+
+
+ const updateCounter1 = (value) => {
+  console.log("updateCounter1 " +  valueMap[value]);
+         adderStage4 = valueMap[value] || 0;
+       // counterDiv.textContent = `Counter: ${adderStage4}`;
+      //  counterDiv.textContent = `Counter: ${amount}`;
+      };
+
+       const updateCounter2 = (value) => {
+         adderStage6 = valueMap2[value] || 0;
+     //   counterDiv.textContent = `Counter: ${adderStage6}`;
+      //  counterDiv.textContent = `Counter: ${amount}`;
+      };
+
+      let selectedData4;
+
+            // Event listener for slider changes
+      slider1.addEventListener('input', () => {
+        const value = slider1.value;
+        numberInput1.value = value;
+        selectedData4 =  slider1.value;
+        updateCounter1(value);
+      });
+
+      // Event listener for number input changes
+      numberInput1.addEventListener('input', () => {
+        const value = numberInput1.value;
+        slider1.value = value;
+        updateCounter1(value);
+      });
+
+
+let selectedData6;
+
+            // Event listener for slider changes
+      slider2.addEventListener('input', () => {
+        const value = slider2.value;
+        numberInput2.value = value;
+        selectedData6 =  slider2.value;
+        updateCounter2(value);
+      });
+
+      // Event listener for number input changes
+      numberInput2.addEventListener('input', () => {
+        const value = numberInput2.value;
+        slider2.value = value;
+        updateCounter2(value);
+      });
+
+
+      radioStage1.forEach(label => {
+        const radio = label.querySelector('input[type="radio"]');
+        radio.addEventListener('change', () => {
+          if (radio.checked) {
+            const value = parseInt(label.getAttribute('data-value'), 10);
+            //amount += value;
+            adderStage1 =value; 
+           // counterDiv.textContent = `total : CHF${amount}`;
+          }
+        });
+      });
+
+
+      let selectedDataInRadio1;
+    
+      radioStage1.forEach(label => {
+        const radio = label.querySelector('input[type="radio"]');
+        radio.addEventListener('change', () => {
+          if (radio.checked) {
+             selectedDataInRadio1 = label.getAttribute('select-data');
+          }
+        });
+      });
+
+
+
+
+
+
+            radioStage2.forEach(label => {
+        const radio = label.querySelector('input[type="radio"]');
+        radio.addEventListener('change', () => {
+          if (radio.checked) {
+            const value = parseInt(label.getAttribute('data-value'), 10);
+            //amount += value;
+             adderStage2 =value; 
+           // counterDiv.textContent = `Counter: ${amount}`;
+          }
+        });
+      });
+
+      let selectedDataInRadio2;
+    
+    radioStage2.forEach(label => {
+      const radio = label.querySelector('input[type="radio"]');
+      radio.addEventListener('change', () => {
+        if (radio.checked) {
+           selectedDataInRadio2 = label.getAttribute('select-data');
+        }
+      });
+    });
+
+
+
+
+
+
+
+
+              radioStage3.forEach(label => {
+        const radio = label.querySelector('input[type="radio"]');
+        radio.addEventListener('change', () => {
+          if (radio.checked) {
+            const value = parseInt(label.getAttribute('data-value'), 10);
+           // amount += value;
+             adderStage3 =value; 
+           // counterDiv.textContent = `Counter: ${amount}`;
+          }
+        });
+      });
+
+      let selectedDataInRadio3;
+    
+    radioStage3.forEach(label => {
+      const radio = label.querySelector('input[type="radio"]');
+      radio.addEventListener('change', () => {
+        if (radio.checked) {
+           selectedDataInRadio3 = label.getAttribute('select-data');
+        }
+      });
+    });
+
+
+
+
+
+
+                  radioStage5.forEach(label => {
+        const radio = label.querySelector('input[type="radio"]');
+        radio.addEventListener('change', () => {
+          if (radio.checked) {
+            const value = parseInt(label.getAttribute('data-value'), 10);
+          //  amount += value;
+             adderStage5 =value; 
+          //8  counterDiv.textContent = `Counter: ${amount}`;
+          }
+        });
+      });
+
+      let selectedDataInRadio5;
+    
+    radioStage5.forEach(label => {
+      const radio = label.querySelector('input[type="radio"]');
+      radio.addEventListener('change', () => {
+        if (radio.checked) {
+           selectedDataInRadio5 = label.getAttribute('select-data');
+        }
+      });
+    });
+
+
+
+
+       // Get the input elements
+        const amountInput = document.getElementById('sliderValueInput');
+        const amountSlider = document.getElementById('slider');
+
+        // Update input field when slider value changes
+        amountSlider.addEventListener('input', () => {
+            amountInput.value = amountSlider.value;
+        });
+
+        // Update slider when input field value changes
+        amountInput.addEventListener('input', () => {
+            amountSlider.value = amountInput.value;
+        });
+
+
+               // Get the input elements
+        const amountInput2 = document.getElementById('sliderValueInput2');
+        const amountSlider2 = document.getElementById('slider2');
+
+        // Update input field when slider value changes
+        amountSlider2.addEventListener('input', () => {
+            amountInput2.value = amountSlider2.value;
+        });
+
+        // Update slider when input field value changes
+        amountInput2.addEventListener('input', () => {
+            amountSlider2.value = amountInput2.value;
+        });
+
+  // Function to handle form submission
+        function Test(event) {
+
+
+            console.log("Submit");
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+
+const DataSend = {
+    name: document.querySelector("#name").value,
+    email: document.querySelector("#email").value,
+    phone: document.querySelector("#phone").value,
+    État_civil: selectedDataInRadio1,
+    Situation_professionnelle: selectedDataInRadio2,
+    Êtes_vous_propriétaire :selectedDataInRadio3,
+    Nombre_de_bien_immobilier: selectedData4,
+    cryptomonnaies: selectedDataInRadio5,
+    Nombre_de_cryptomonnaies: selectedData6,
+    Assist_Demande_de_délai: Assistance1,
+    Assist_Analyse_de_la_taxation_définitive: Assistance2,
+    Assist_Opposition: Assistance3,
+    Assist_Hotline_annuelle: Assistance4,
+    Assist_Vivatax_Assistance_365: Assistance5,
+}
+
+
+            // Send POST request using Axios
+            axios.post('https://hook.eu2.make.com/15ukkmq3gxca80jlw8y0c9lmh2lrxg7p', DataSend)
+            .then(function (response) {
+                console.log(response);
+
+                if(adderStage11 == 0)
+                {
+                  EndNum = 69 + adderStage1 + adderStage2 + adderStage3 + adderStage4 + adderStage5 + adderStage6 +adderStage7 +adderStage8 + adderStage9 + adderStage10;
+                }
+                else
+                {
+                  EndNum = 69 + adderStage1 + adderStage2 + adderStage3 + adderStage4 + adderStage5 + adderStage6 + adderStage11;
+                }
+                counterDiv.textContent = `Total: CHF ${EndNum}.-`;
+
+                 window.parent.postMessage('showConfettiAndHideStage7', '*');
+              //Confetti();
+                  stage7.classList.add('hidden');
+  stage8.classList.remove('hidden');
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+        }
+
+ function Confetti () {
+        const jsConfetti = new JSConfetti();
+                jsConfetti.addConfetti().then(() => {
+                    console.log('Confetti displayed');
+                }).catch(error => {
+                    console.error('Error displaying confetti:', error);
+                });
+        }
+
+        // Attach event listener to the form submit event
+        document.getElementById('myForm').addEventListener('submit', Test);
+
+let stage1 = document.querySelector('.stage1');
+let stage2 = document.querySelector('.stage2');
+let stage3 = document.querySelector('.stage3');
+let stage4 = document.querySelector('.stage4');
+let stage5 = document.querySelector('.stage5');
+let stage6 = document.querySelector('.stage6');
+let stage7 = document.querySelector('.stage7');
+let stage8 = document.querySelector('.stage8');
+let stage9 = document.querySelector('.stage9');
+
+let radio1Stage;
+let radio2Stage;
+
+let allRadio1 = document.querySelectorAll('.radioStage1');
+
+allRadio1.forEach(radio => {
+  radio.addEventListener('click', () => {
+    toScreen2();
+  });
+});
+
+let allRadio2 = document.querySelectorAll('.radioStage2');
+
+allRadio2.forEach(radio => {
+  radio.addEventListener('click', () => {
+    toScreen3();
+  });
+});
+
+let allRadio3 = document.querySelectorAll('.radioStage3');
+
+allRadio3.forEach(radio => {
+  radio.addEventListener('click', () => {
+    if(radio.getAttribute('result') == "true"){
+      console.log(" toScreen4();");
+      radio1Stage = "true";
+      toScreen4();
+    }
+    else
+    {
+      console.log(" toScreen5();");
+      radio1Stage = "false";
+      toScreen5();
+    }
+    
+  });
+});
+
+let allRadio5 = document.querySelectorAll('.radioStage5');
+
+allRadio5.forEach(radio => {
+  radio.addEventListener('click', () => {
+    if(radio.getAttribute('result') == "true"){
+      console.log(" toScreen6();");
+      radio2Stage = "true";
+      toScreen6();
+    }
+    else
+    {
+      console.log(" toScreen7();");
+      radio2Stage = "false";
+      toScreen9();
+    }
+
+  });
+});
+
+let select1 = document.querySelector('#select1');
+
+select1.addEventListener('change', function() {
+    // Get the selected option
+    const selectedOption = select1.options[select1.selectedIndex];
+    adderStage1 = parseInt(selectedOption.getAttribute('data-value'), 10);
+    // Check if the selected option has the class "radioStage1"
+    toScreen2();
+});
+
+let select2 = document.querySelector('#select2');
+
+select2.addEventListener('change', function() {
+    // Get the selected option
+    const selectedOption = select2.options[select2.selectedIndex];
+     adderStage2 = parseInt(selectedOption.getAttribute('data-value'), 10);
+    
+    
+    // Check if the selected option has the class "radioStage1"
+    toScreen3();
+});
+
+document.querySelector('#next1').addEventListener('click', () => {
+//   stage1.classList.add('hidden');
+//   stage2.classList.remove('hidden');
+console.log("toScreen2");
+toScreen2();
+});
+
+document.querySelector('#next2').addEventListener('click', () => {
+    toScreen3();
+});
+
+document.querySelector('#back2').addEventListener('click', () => {
+    toScreen1();
+});
+
+document.querySelector('#next3').addEventListener('click', () => {
+    toScreen4();
+});
+
+document.querySelector('#back3').addEventListener('click', () => {
+    toScreen2();
+});
+
+document.querySelector('#next4').addEventListener('click', () => {
+    toScreen5();
+});
+
+document.querySelector('#back4').addEventListener('click', () => {
+    toScreen3();
+});
+
+document.querySelector('#next5').addEventListener('click', () => {
+
+    toScreen6();
+});
+
+document.querySelector('#back5').addEventListener('click', () => {
+  if(radio1Stage == "false")  
+     toScreen3();
+    else
+    toScreen4();
+});
+
+document.querySelector('#next6').addEventListener('click', () => {
+    toScreen9();
+});
+
+document.querySelector('#back6').addEventListener('click', () => {
+    toScreen5();
+});
+
+document.querySelector('#next9').addEventListener('click', () => {
+    toScreen7();
+});
+
+document.querySelector('#back9').addEventListener('click', () => {
+  if(radio2Stage == "false")  
+     toScreen5();
+    else
+    toScreen6();
+});
+
+function toScreen1 () {
+    stage1.classList.remove('hidden');
+    stage2.classList.add('hidden');
+    stage3.classList.add('hidden');
+    stage4.classList.add('hidden');
+    stage5.classList.add('hidden');
+    stage6.classList.add('hidden');
+    stage7.classList.add('hidden');
+    stage9.classList.add('hidden');
+}
+
+function toScreen2 () {
+    // const smallScreenWidth = 300; 
+    // toScreen2();
+    // Check if the screen width is smaller than the defined threshold
+    // if (window.matchMedia(`(max-width: ${smallScreenWidth}px)`).matches) {
+    //     if(stage3.classList.contains('hidden'))
+    // {
+    //     toScreen3();
+    // }
+    // else
+    // {
+    //     toScreen1();
+    // }
+    // } else {
+    //     console.log("toScreen2");
+    stage1.classList.add('hidden');
+    stage2.classList.remove('hidden');
+    stage3.classList.add('hidden');
+    stage4.classList.add('hidden');
+    stage5.classList.add('hidden');
+    stage6.classList.add('hidden');
+    stage7.classList.add('hidden');
+    stage9.classList.add('hidden');
+    // }
+
+}
+
+function toScreen3 () {
+    stage1.classList.add('hidden');
+    stage2.classList.add('hidden');
+    stage3.classList.remove('hidden');
+    stage4.classList.add('hidden');
+    stage5.classList.add('hidden');
+    stage6.classList.add('hidden');
+    stage7.classList.add('hidden');
+    stage9.classList.add('hidden');
+}
+
+function toScreen4 () {
+    stage1.classList.add('hidden');
+    stage2.classList.add('hidden');
+    stage3.classList.add('hidden');
+    stage4.classList.remove('hidden');
+    stage5.classList.add('hidden');
+    stage6.classList.add('hidden');
+    stage7.classList.add('hidden');
+    stage9.classList.add('hidden');
+}
+
+function toScreen5 () {
+    stage1.classList.add('hidden');
+    stage2.classList.add('hidden');
+    stage3.classList.add('hidden');
+    stage4.classList.add('hidden');
+    stage5.classList.remove('hidden');
+    stage6.classList.add('hidden');
+    stage7.classList.add('hidden');
+    stage9.classList.add('hidden');
+}
+
+function toScreen6 () {
+    stage1.classList.add('hidden');
+    stage2.classList.add('hidden');
+    stage3.classList.add('hidden');
+    stage4.classList.add('hidden');
+    stage5.classList.add('hidden');
+    stage6.classList.remove('hidden');
+    stage7.classList.add('hidden');
+    stage9.classList.add('hidden');
+}
+
+function toScreen7 () {
+    stage1.classList.add('hidden');
+    stage2.classList.add('hidden');
+    stage3.classList.add('hidden');
+    stage4.classList.add('hidden');
+    stage5.classList.add('hidden');
+    stage6.classList.add('hidden');
+    stage7.classList.remove('hidden');
+    stage9.classList.add('hidden');
+}
+
+function toScreen9 () {
+    stage1.classList.add('hidden');
+    stage2.classList.add('hidden');
+    stage3.classList.add('hidden');
+    stage4.classList.add('hidden');
+    stage5.classList.add('hidden');
+    stage6.classList.add('hidden');
+    stage7.classList.add('hidden');
+    stage9.classList.remove('hidden');
+}
+
+
+
+document.querySelector('#EndButton').addEventListener('click', function() {
+  window.parent.postMessage('ToLocations', '*');
+//window.open("/")
+    // You can add any other code you want to run when the element is clicked here
+});
+      
+    </script>
+  </div>
